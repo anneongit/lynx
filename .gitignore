@@ -4,3 +4,7 @@ resources/_gen/
 
 # Lock file created during the build
 .hugo_build.lock
+
+
+# macOS
+.DS_Store
