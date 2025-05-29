@@ -2,15 +2,22 @@ baseURL = "https://anneongit.github.io/lynx/"
 languageCode = "en"
 defaultContentLanguage = "en"
 
-title = "Lynx"
+title = "Anne T."
 # copyright = "Copy, _right?_ :thinking_face:"
 
 enableEmoji = true
 disableKinds = ["taxonomy", "term"]
 
+# (Optional SEO mirror into root params; lynx theme layouts/partials/head.html picks it up)
+[params]
+  Description = "Anne T., RN and Family NP candidate sharing pharmacotherapy insights…"
+  image       = "anne-avatar.png"
+  keywords = "nursing,FNP,pharmacology"
+  robots   = "index, follow"
+
 [params.author]
   name = "Anne T."
-  headline = "An awesome person"
+  headline = "Awesome Person | Registered Nurse | FNP Candidate"
   image = "anne-avatar.png"  # path relative to static directory
 
   links = [
@@ -34,7 +41,7 @@ disableKinds = ["taxonomy", "term"]
     # { keybase = "https://keybase.io/username" },
     # { kickstarter = "https://www.kickstarter.com/profile/username" },
     # { lastfm = "https://last.fm/user/username" },
-    # { linkedin = "https://linkedin.com/in/username" },
+    { linkedin = "https://linkedin.com/in/anne-tamez" },
     # { mastodon = "https://mastodon.instance/@username" },
     # { medium = "https://medium.com/username" },
     # { microsoft = "https://www.microsoft.com/" },
@@ -58,6 +65,9 @@ disableKinds = ["taxonomy", "term"]
     # { x = "https://x.com/username" },
     # { youtube = "https://youtube.com/username" },
   ]
+
+enableRobotsTXT = true
+canonifyURLs = true 
 
 [module]
   [module.hugoVersion]
