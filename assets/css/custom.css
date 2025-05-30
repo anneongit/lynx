@@ -1,0 +1,51 @@
+/* Enhanced dark mode for Lynx theme - glassy, modern look */
+@media (prefers-color-scheme: dark) {
+  .dark\:bg-neutral-800 {
+    background: radial-gradient(ellipse at top left, #232347 60%, #181825 100%) !important;
+  }
+  
+  /* Link cards - using both .link and Tailwind classes */
+  .link {
+    background: rgba(24, 24, 37, 0.8) !important;
+    border-radius: 18px !important;
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.3) !important;
+    backdrop-filter: blur(8px) !important;
+    border: 1.5px solid rgba(255,255,255,0.1) !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .link:hover {
+    transform: translateY(-2px) !important;
+    border: 1.5px solid #a78bfa !important;
+    box-shadow: 0 12px 24px rgba(167, 139, 250, 0.2) !important;
+    background: rgba(36, 36, 56, 0.9) !important;
+  }
+
+  /* Enhanced Profile section */
+  .text-4xl {
+    color: #ffffff !important;
+    text-shadow: 0 0 15px rgba(167, 139, 250, 0.3) !important;
+    letter-spacing: -0.02em !important;
+    font-weight: 600 !important;
+  }
+
+  .dark\:text-neutral-400 {
+    color: rgba(255,255,255,0.95) !important;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.2) !important;
+    letter-spacing: 0.01em !important;
+    font-weight: 400 !important;
+  }
+
+  /* Enhanced avatar effect */
+  .rounded-full {
+    border: 2px solid rgba(167, 139, 250, 0.2) !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2) !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .rounded-full:hover {
+    transform: scale(1.02) !important;
+    border-color: rgba(167, 139, 250, 0.4) !important;
+    box-shadow: 0 8px 32px rgba(167, 139, 250, 0.15) !important;
+  }
+}
