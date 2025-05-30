@@ -38,6 +38,31 @@ Hey there! 👋 I’m Anne, and this is my personal “link in bio” site—a s
 - **Theme settings:**
   - See [Lynx theme docs](https://github.com/jpanther/lynx#readme) for advanced options.
 
+## Custom Dark Theme Enhancements
+I've added several modern UI enhancements to the dark theme:
+
+### 🎨 Visual Elements
+- **Background:** Radial gradient background in deep purple tones
+- **Link Cards:** 
+  - Glassy, frosted-glass effect with blur
+  - Interactive hover animations
+  - Purple accent borders on hover
+- **Profile Section:**
+  - Clean, bright text with subtle purple glow
+  - Enhanced avatar with gentle border effects
+  - Hover animations on interactive elements
+
+### 📱 Mobile Optimization
+- Improved status bar appearance on iOS devices
+- Proper handling of notches and Dynamic Island
+- Seamless dark theme integration with system UI
+
+### 🛠️ Implementation Details
+These customizations are implemented in:
+- `assets/css/custom.css` - Main theme customizations
+- `layouts/partials/extend-head.html` - Mobile viewport optimizations
+- `static/site.webmanifest` - Theme color configurations
+
 ## Credits
 - [Lynx Hugo Theme](https://github.com/jpanther/lynx) by @jpanther
 - [Hugo](https://gohugo.io/)
