@@ -9,6 +9,7 @@ Hey there! 👋 I’m Anne, and this is my personal “link in bio” site—a s
 - A clean, mobile-friendly landing page
 - My key links and social profiles
 - Quick intro/about section
+- **Smart dark/light theme toggle** that respects your system preference
 
 ## Quick Start (for me or the curious)
 1. **Clone this repo:**
@@ -38,30 +39,67 @@ Hey there! 👋 I’m Anne, and this is my personal “link in bio” site—a s
 - **Theme settings:**
   - See [Lynx theme docs](https://github.com/jpanther/lynx#readme) for advanced options.
 
+## ✨ Theme Toggle Features
+This site includes a beautiful, custom theme toggle that enhances the user experience:
+
+### 🌓 Smart Theme Detection
+- **Respects System Preference**: Automatically loads in dark or light mode based on your device settings
+- **One-Click Toggle**: Simple toggle between light and dark themes
+- **Remembers Choice**: Saves your preference for future visits
+- **No Flash**: Smooth loading without theme flicker
+
+### 🎨 Interactive Design
+- **Light Mode**: 
+  - Clean original Lynx theme styling
+  - Moon icon with purple fill preview on hover
+  - Subtle shadow effects and smooth transitions
+- **Dark Mode**: 
+  - Custom purple gradient backgrounds
+  - Glowing purple accent colors matching link buttons
+  - Sun icon with neon purple glow effects
+
+### ♿ Accessibility Features
+- **Screen Reader Support**: Announces theme changes
+- **Keyboard Navigation**: Full keyboard accessibility (Space/Enter)
+- **Focus States**: Clear visual focus indicators
+- **Proper ARIA Labels**: Descriptive labels for assistive technology
+
 ## Custom Dark Theme Enhancements
-I've added several modern UI enhancements to the dark theme:
+I've added several modern UI enhancements to create a cohesive dark theme experience:
 
 ### 🎨 Visual Elements
 - **Background:** Radial gradient background in deep purple tones
 - **Link Cards:** 
   - Glassy, frosted-glass effect with blur
-  - Interactive hover animations
-  - Purple accent borders on hover
+  - Interactive hover animations with lift effects
+  - Purple accent borders and glow on hover
 - **Profile Section:**
   - Clean, bright text with subtle purple glow
   - Enhanced avatar with gentle border effects
-  - Hover animations on interactive elements
+  - Smooth hover animations on interactive elements
+- **Theme Toggle:**
+  - Elegant floating toggle button
+  - Purple glow effects matching overall design
+  - Smooth icon transitions and hover states
 
 ### 📱 Mobile Optimization
 - Improved status bar appearance on iOS devices
 - Proper handling of notches and Dynamic Island
 - Seamless dark theme integration with system UI
+- Responsive theme toggle sizing
 
 ### 🛠️ Implementation Details
 These customizations are implemented in:
-- `assets/css/custom.css` - Main theme customizations
-- `layouts/partials/extend-head.html` - Mobile viewport optimizations
+- `assets/css/custom.css` - Main theme customizations and toggle styling
+- `static/js/theme-toggle.js` - Theme toggle functionality and logic
+- `layouts/partials/extend-head.html` - Mobile viewport optimizations and script loading
 - `static/site.webmanifest` - Theme color configurations
+
+### 🔧 Technical Features
+- **Error Handling**: Graceful degradation when localStorage is unavailable
+- **Performance Optimized**: Prevents theme flash on page load
+- **Cross-Browser Compatible**: Works with modern browsers and older versions
+- **System Integration**: Dynamic theme-color meta tag updates
 
 ## Credits
 - [Lynx Hugo Theme](https://github.com/jpanther/lynx) by @jpanther
