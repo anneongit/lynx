@@ -43,10 +43,11 @@ Hey there! 👋 I’m Anne, and this is my personal “link in bio” site—a s
 This site includes a beautiful, custom theme toggle that enhances the user experience:
 
 ### 🌓 Smart Theme Detection
-- **Respects System Preference**: Automatically loads in dark or light mode based on your device settings
-- **One-Click Toggle**: Simple toggle between light and dark themes
-- **Remembers Choice**: Saves your preference for future visits
+- **Respects System Preference**: Automatically loads in dark or light mode based on your device settings on first visit
+- **One-Click Toggle**: Simple toggle between light and dark themes that overrides system preferences
+- **Remembers Choice**: Saves your preference for future visits using localStorage
 - **No Flash**: Smooth loading without theme flicker
+- **System Override**: Custom toggle completely overrides system dark mode to prevent conflicts
 
 ### 🎨 Interactive Design
 - **Light Mode**: 
@@ -100,6 +101,7 @@ These customizations are implemented in:
 - **Performance Optimized**: Prevents theme flash on page load
 - **Cross-Browser Compatible**: Works with modern browsers and older versions
 - **System Integration**: Dynamic theme-color meta tag updates
+- **Conflict Resolution**: CSS overrides prevent system dark mode from interfering with manual toggle
 
 ## Credits
 - [Lynx Hugo Theme](https://github.com/jpanther/lynx) by @jpanther

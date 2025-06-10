@@ -22,12 +22,23 @@
             if (themeToApply === DARK_THEME) {
                 document.documentElement.classList.add('dark-mode');
                 document.body.classList.add('dark-mode');
+            } else {
+                // Ensure light mode is properly applied even on dark system
+                document.documentElement.classList.remove('dark-mode');
+                if (document.body) {
+                    document.body.classList.remove('dark-mode');
+                }
             }
         } catch (e) {
             // Fallback to system preference if localStorage fails
             if (getSystemPreference() === DARK_THEME) {
                 document.documentElement.classList.add('dark-mode');
                 document.body.classList.add('dark-mode');
+            } else {
+                document.documentElement.classList.remove('dark-mode');
+                if (document.body) {
+                    document.body.classList.remove('dark-mode');
+                }
             }
         }
     }
@@ -69,7 +80,7 @@
         document.head.appendChild(metaThemeColor);
     }
 
-    // Apply theme to document
+    // Apply theme to document with better system override handling
     function applyTheme(theme) {
         // Apply to both body and documentElement for better coverage
         const elements = [document.body, document.documentElement];
@@ -88,6 +99,9 @@
 
         // Update toggle button icon
         updateToggleIcon(theme);
+        
+        // Log for debugging
+        console.log(`Theme applied: ${theme}, body classes:`, document.body.className);
     }
 
     // Update toggle button icon with better accessibility

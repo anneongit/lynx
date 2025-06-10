@@ -12,6 +12,58 @@
 
 /* Light mode uses original Lynx theme - no custom styling */
 
+/* Override system-level dark mode when in light mode */
+/* This ensures that system dark mode doesn't interfere with our toggle */
+@media (prefers-color-scheme: dark) {
+  /* Force light mode styles when .dark-mode class is NOT present */
+  body:not(.dark-mode) {
+    background-color: #ffffff !important;
+  }
+  
+  body:not(.dark-mode) .dark\:bg-neutral-800 {
+    background-color: #ffffff !important;
+  }
+  
+  body:not(.dark-mode) .dark\:text-neutral-400 {
+    color: rgb(156 163 175) !important;
+  }
+  
+  body:not(.dark-mode) .dark\:text-neutral-500 {
+    color: rgb(107 114 128) !important;
+  }
+  
+  body:not(.dark-mode) .dark\:text-white {
+    color: rgb(17 24 39) !important;
+  }
+  
+  /* Override prose dark mode when not in custom dark mode */
+  body:not(.dark-mode) .dark\:prose-invert {
+    --tw-prose-body: #374151;
+    --tw-prose-headings: #1f2937;
+    --tw-prose-lead: #6b7280;
+    --tw-prose-links: #7e22ce;
+    --tw-prose-bold: #111827;
+    --tw-prose-counters: #1f2937;
+    --tw-prose-bullets: #6b7280;
+    --tw-prose-hr: #e5e7eb;
+    --tw-prose-quotes: #374151;
+    --tw-prose-quote-borders: #e9d5ff;
+    --tw-prose-captions: #6b7280;
+    --tw-prose-kbd: #111827;
+    --tw-prose-kbd-shadows: 17 24 39;
+    --tw-prose-code: #7e22ce;
+    --tw-prose-pre-code: #374151;
+    --tw-prose-pre-bg: #f9fafb;
+    --tw-prose-th-borders: #6b7280;
+    --tw-prose-td-borders: #d1d5db;
+  }
+  
+  body:not(.dark-mode) .prose .chroma {
+    background-color: rgb(249 250 251) !important;
+    color: rgb(55 65 81) !important;
+  }
+}
+
 /* Dark mode - your custom styling */
 body.dark-mode, 
 html.dark-mode,
