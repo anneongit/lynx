@@ -1,51 +1,194 @@
-/* Enhanced dark mode for Lynx theme - glassy, modern look */
-@media (prefers-color-scheme: dark) {
-  .dark\:bg-neutral-800 {
-    background: radial-gradient(ellipse at top left, #232347 60%, #181825 100%) !important;
+/* Theme Toggle Variables for Dark Mode Only */
+:root {
+  --bg-gradient-dark: radial-gradient(ellipse at top left, #232347 60%, #181825 100%);
+  --link-bg-dark: rgba(24, 24, 37, 0.8);
+  --link-hover-bg-dark: rgba(36, 36, 56, 0.9);
+  --link-border-dark: rgba(255, 255, 255, 0.1);
+  --link-hover-border-dark: #a78bfa;
+  --text-primary-dark: #ffffff;
+  --text-secondary-dark: rgba(255, 255, 255, 0.95);
+  --avatar-border-dark: rgba(167, 139, 250, 0.2);
+}
+
+/* Light mode uses original Lynx theme - no custom styling */
+
+/* Dark mode - your custom styling */
+body.dark-mode, 
+html.dark-mode,
+.dark-mode .dark\:bg-neutral-800 {
+  background: var(--bg-gradient-dark) !important;
+}
+
+.dark-mode .link {
+  background: var(--link-bg-dark) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.3) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1.5px solid var(--link-border-dark) !important;
+  transition: all 0.3s ease !important;
+}
+
+.dark-mode .link:hover {
+  transform: translateY(-2px) !important;
+  border: 1.5px solid var(--link-hover-border-dark) !important;
+  box-shadow: 0 12px 24px rgba(167, 139, 250, 0.2) !important;
+  background: var(--link-hover-bg-dark) !important;
+}
+
+.dark-mode .text-4xl {
+  color: var(--text-primary-dark) !important;
+  text-shadow: 0 0 15px rgba(167, 139, 250, 0.3) !important;
+  letter-spacing: -0.02em !important;
+  font-weight: 600 !important;
+}
+
+.dark-mode .dark\:text-neutral-400 {
+  color: var(--text-secondary-dark) !important;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.2) !important;
+  letter-spacing: 0.01em !important;
+  font-weight: 400 !important;
+}
+
+.dark-mode .rounded-full {
+  border: 2px solid var(--avatar-border-dark) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2) !important;
+  transition: all 0.3s ease !important;
+}
+
+.dark-mode .rounded-full:hover {
+  transform: scale(1.02) !important;
+  border-color: rgba(167, 139, 250, 0.4) !important;
+  box-shadow: 0 8px 32px rgba(167, 139, 250, 0.15) !important;
+}
+
+/* Minimal Footer-Style Theme Toggle */
+.theme-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 9999;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+/* Light mode hover - darken and fill effect with subtle glow */
+.theme-toggle:hover {
+  opacity: 1;
+  color: rgba(0, 0, 0, 1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.theme-toggle:hover svg {
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.3));
+  stroke-width: 2.5;
+}
+
+/* Light mode moon preview - fill with dark theme purple */
+.theme-toggle:hover svg .moon-fill {
+  fill: #a78bfa !important;
+  transition: fill 0.3s ease;
+}
+
+.theme-toggle:active {
+  opacity: 0.6;
+  transition: all 0.1s ease;
+}
+
+/* Dark mode - purple glow aesthetic to match your links */
+.dark-mode .theme-toggle {
+  color: rgba(255, 255, 255, 0.75);
+  opacity: 0.8;
+}
+
+.dark-mode .theme-toggle:hover {
+  color: #a78bfa;
+  opacity: 1;
+  filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.4));
+  box-shadow: 0 12px 24px rgba(167, 139, 250, 0.2);
+  transform: translateY(-2px);
+}
+
+  /* Dark mode sun - subtle default, full glow on hover */
+  .dark-mode .theme-toggle svg {
+    stroke: rgba(255, 255, 255, 0.75);
+    transition: all 0.3s ease;
+  }
+
+  .dark-mode .theme-toggle:hover svg {
+    stroke: #a78bfa;
+    filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.6)) drop-shadow(0 0 16px rgba(167, 139, 250, 0.3));
+    stroke-width: 2.5;
+  }
+
+/* SVG icon styling */
+.theme-toggle svg {
+  transition: all 0.3s ease;
+  opacity: inherit;
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+
+/* Accessibility improvements */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Focus states for better accessibility */
+.theme-toggle:focus {
+  outline: none;
+  color: rgba(0, 0, 0, 1);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid rgba(59, 130, 246, 0.3);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.dark-mode .theme-toggle:focus {
+  color: rgba(255, 255, 255, 1);
+}
+
+.dark-mode .theme-toggle:focus-visible {
+  outline-color: rgba(167, 139, 250, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .theme-toggle {
+    bottom: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Maintain visibility on small screens */
+@media (max-width: 480px) {
+  .theme-toggle {
+    opacity: 0.6;
   }
   
-  /* Link cards - using both .link and Tailwind classes */
-  .link {
-    background: rgba(24, 24, 37, 0.8) !important;
-    border-radius: 18px !important;
-    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.3) !important;
-    backdrop-filter: blur(8px) !important;
-    border: 1.5px solid rgba(255,255,255,0.1) !important;
-    transition: all 0.3s ease !important;
-  }
-
-  .link:hover {
-    transform: translateY(-2px) !important;
-    border: 1.5px solid #a78bfa !important;
-    box-shadow: 0 12px 24px rgba(167, 139, 250, 0.2) !important;
-    background: rgba(36, 36, 56, 0.9) !important;
-  }
-
-  /* Enhanced Profile section */
-  .text-4xl {
-    color: #ffffff !important;
-    text-shadow: 0 0 15px rgba(167, 139, 250, 0.3) !important;
-    letter-spacing: -0.02em !important;
-    font-weight: 600 !important;
-  }
-
-  .dark\:text-neutral-400 {
-    color: rgba(255,255,255,0.95) !important;
-    text-shadow: 0 1px 8px rgba(0,0,0,0.2) !important;
-    letter-spacing: 0.01em !important;
-    font-weight: 400 !important;
-  }
-
-  /* Enhanced avatar effect */
-  .rounded-full {
-    border: 2px solid rgba(167, 139, 250, 0.2) !important;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.2) !important;
-    transition: all 0.3s ease !important;
-  }
-
-  .rounded-full:hover {
-    transform: scale(1.02) !important;
-    border-color: rgba(167, 139, 250, 0.4) !important;
-    box-shadow: 0 8px 32px rgba(167, 139, 250, 0.15) !important;
+  .theme-toggle:hover {
+    opacity: 1;
   }
 }
